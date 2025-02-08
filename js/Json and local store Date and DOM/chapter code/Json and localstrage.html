@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>json</title>
+</head>
+<body>
+  <script>
+      //   let product={
+  //     name:'T-shert',
+  //     size:'S',
+  //     prize:245,
+  //     rating:{
+  //       stars:4.5,
+  //       noOfReviews:458,
+  //     }
+  //   }
+  //   console.log(typeof(product));
+  //  console.log(product);
+  //  product_str=JSON.stringify(product)
+  //  console.log(typeof(product_str))
+  //  console.log(product_str);
+
+  // product_obj=JSON.parse(product_str);
+  // console.log(typeof(product_obj));
+  // console.log(product_obj); 
+  
+  let product={
+      name:'T-shert',
+      size:'S',
+      prize:245,
+      rating:{
+        stars:4.5,
+        noOfReviews:458,
+      }
+    }
+    // }
+    // localStorage.setItem('name','kgcoding');
+    // localStorage.setItem('price','6564');
+  //  console.log(localStorage.getItem('name'));
+  //  localStorage.setItem('product',JSON.stringify(product));
+   console.log(JSON.parse(localStorage.getItem('product')));
+    localStorage.clear();
+  </script>
+  
+</body>
+</html>

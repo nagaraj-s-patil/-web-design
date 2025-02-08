@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>metro tiket</title>
+</head>
+<body>
+  <script>
+    let age=8;
+    let gender='woman';
+    let descont;
+    if(5>=age){
+      descont=100;
+    }
+    else if((5<=age && 8>=age) || gender=='woman'){
+      descont=50;
+    }
+    else if(65<=age){
+      descont=30;
+    }
+    else descont=0;
+
+    console.log(`discont is ${descont}`);
+  </script>
+</body>
+</html>

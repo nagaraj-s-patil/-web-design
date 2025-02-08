@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>cricket</title>
+  <style>
+    body{
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1 >bat bol stum game</h1>
+  <!-- button bat -->
+  <button onclick="
+  let computer= genratingComputerChoose();
+ 
+ let resultMsg=getResult('bat',computer);
+ showResult('bat',computer,resultMsg);
+
+
+
+  ">bat</button>
+
+  <!-- button of bol -->
+  <button 
+  onclick="
+    computer =genratingComputerChoose()
+    resultMsg=getResult('bol',computer);
+    showResult('bol',computer,resultMsg);
+    
+    
+    
+    ">bol</button>
+ 
+ <!-- button stump -->
+ <button
+  onclick=" 
+   computer= genratingComputerChoose()
+   resultMsg= getResult('stump',computer);
+   showResult('stum',computer,resultMsg);
+  
+    
+    ">stump</button>
+
+ 
+ <!-- script start -->
+ <script>
+  // genrating computer message
+ 
+ function genratingComputerChoose(){
+  
+       let randamNumber =Math.random() *3 ;
+
+      if(randamNumber>0 && randamNumber<=1){
+          return 'bat';
+      }
+      else if(randamNumber>1 &&randamNumber<=2){
+          return 'bol';
+      }
+      else {
+          return 'stump';
+      }
+  }
+  // genrating result message
+
+  function getResult(userChose,computer){
+      if(userChose==='bat'){
+      
+              if(computer=== 'bat'){
+                  return'its a tie';
+
+              }
+              else if(computer==='bol'){
+                  return'computer win';
+              }
+              else{
+                return`computer win`;
+              }
+      }else if(userChose==='bol'){
+              if(computer=== 'bat'){
+                  return'computeer win';
+
+              }
+              else if(computer==='bol'){
+                  return'its a tie';
+              }
+              else{
+                return`user win `;
+              } 
+        }else{
+          if(computer=== 'bat'){
+                 return'user win';
+
+              }
+              else if(computer==='bol'){
+                  return'computer win';
+              }
+              else{
+                return`it's tie `;
+              }
+
+
+        }
+    }
+
+
+    // showResulting code 
+    function showResult(userChose,computer,resultMsg){
+      
+ alert(`user Chose is ${userChose},computer Chose is ${computer} And Result is ${resultMsg}`);
+    }
+ </script>
+</body>
+</html>

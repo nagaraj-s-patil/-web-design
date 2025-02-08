@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Calculater.css">
+  <title>Calculater</title>
+</head>
+<body>
+  <div class="calculater_contener">
+    <input type="text" id="display" readonly>
+    <div class="button_Contener">
+      <button class="cal_but" onclick="curent_desplay=''; document.querySelector('#display').value=curent_desplay">c</button>
+      <button class="cal_but" onclick="curent_desplay=curent_desplay+'1'; document.querySelector('#display').value=curent_desplay">1</button>
+      <button class="cal_but" onclick="curent_desplay=curent_desplay+'2'; document.querySelector('#display').value=curent_desplay">2</button>
+      <button class="cal_but" onclick="curent_desplay=curent_desplay+'+'; document.querySelector('#display').value=curent_desplay">+</button>
+      <button class="cal_but" onclick="curent_desplay=curent_desplay+'3'; document.querySelector('#display').value=curent_desplay">3</button>
+      <button class="cal_but" onclick="curent_desplay=curent_desplay+'4'; document.querySelector('#display').value=curent_desplay">4</button>
+      <button class="cal_but" onclick="curent_desplay=curent_desplay+'-'; document.querySelector('#display').value=curent_desplay">-</button>
+      <button class="cal_but" onclick="curent_desplay=curent_desplay+'5'; document.querySelector('#display').value=curent_desplay">5</button>
+      <button class="cal_but" onclick="curent_desplay=curent_desplay+'6'; document.querySelector('#display').value=curent_desplay">6</button>
+      <button class="cal_but" onclick="curent_desplay=curent_desplay+'*'; document.querySelector('#display').value=curent_desplay">*</button>
+      <button class="cal_but" onclick="curent_desplay=curent_desplay+'7'; document.querySelector('#display').value=curent_desplay">7</button>
+      <button class="cal_but" onclick="curent_desplay=curent_desplay+'8'; document.querySelector('#display').value=curent_desplay">8</button>
+      <button class="cal_but" onclick="curent_desplay=curent_desplay+'/'; document.querySelector('#display').value=curent_desplay">/</button>
+      <button class="cal_but" onclick="
+      
+      curent_desplay=eval(curent_desplay); 
+      curent_desplay=curent_desplay; document.querySelector('#display').value=curent_desplay">=</button>
+      <button class="cal_but" onclick="curent_desplay=curent_desplay+'9'; document.querySelector('#display').value=curent_desplay">9</button>
+      <button class="cal_but" onclick="curent_desplay=curent_desplay+'0'; document.querySelector('#display').value=curent_desplay">0</button>
+      <button class="cal_but" onclick="curent_desplay=curent_desplay+'.'; document.querySelector('#display').value=curent_desplay">.</button>
+
+
+    </div>
+    
+  </div>
+
+
+
+
+  <!-- ------js------ -->
+   <script>
+    let curent_desplay='';
+    document.querySelector('#display').value=curent_desplay;
+   </script>
+</body>
+</html>

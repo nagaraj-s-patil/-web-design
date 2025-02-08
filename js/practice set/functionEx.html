@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>function</title>
+</head>
+<body>
+  <script>
+    // ---------<findOddEven-------->
+    let number=5;
+    findOddEven(number)
+    function findOddEven(number){
+      if(number%2===0){
+        console.log('its a Even');
+      }
+      else{
+        console.log('its a Odd');
+      }
+    }
+
+    // ---------------findLarge-----------
+    let no1=5;
+    let no2=6;
+    console.log(findLarge(no1,no2));
+   function findLarge(number1,number2){
+      if(number1>number2){
+        return number1;
+      }
+      else{
+        return number2;
+      }
+    }
+
+    // --------------convert celsius----------
+    let c=1;
+    console.log(celsiusToFahrenheit(c));
+    function celsiusToFahrenheit(celsius){
+      return (9/5)*celsius+32
+    } 
+  </script>
+  
+</body>
+</html>

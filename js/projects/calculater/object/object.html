@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>object</title>
+</head>
+<body>
+  
+  <script>
+    // let product={
+    //   company:'mango',
+    //   price:299,
+    //   itemName:'tshart',
+
+    // };
+    // this is used for all run all product
+    // console.log(product);
+    // // this is used for when some line add like t-shart
+    // console.log(product['company']);
+    // // this is used for particular 
+    // console.log(product.company);
+    // product.company='bannaba';
+    // console.log(product.company);
+    let product={
+      company:'mango',
+      price:299,
+      itemName:'tshart',
+      displayPrice:function(){
+        console.log(`price of the product is ${this.price}`)
+      }
+    };
+
+    // console.log(typeof(product));
+  </script>
+</body>
+</html>

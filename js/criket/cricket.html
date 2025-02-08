@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>cricket</title>
+  <style>
+    body{
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1 >bat bol stum game</h1>
+  <!-- this is randome number between 0 and 3 -->
+  <button onclick="
+  
+ let randamNumber =Math.random() *3 ;
+ let computerchose;
+ if(randamNumber>0 && randamNumber<=1){
+   computerchose='bat';
+ }
+ else if(randamNumber>1 &&randamNumber<=2){
+   computerchose='bol';
+ }
+ else {
+  computerchose='stump';
+ }
+
+ const computerChoseMsg=` ${computerchose}`;
+ 
+ let resultMsg;
+
+ if(computerchose=== 'bat'){
+    resultMsg='its a tie';
+
+ }
+ else if(computerchose==='bol'){
+    resultMsg='computer win';
+ }
+ else{
+  resultMsg=`you was win`;
+ }
+
+ alert(` you have chose bat And computer chose is${computerChoseMsg} nd ${resultMsg}`);
+  ">bat</button>
+  <button 
+  onclick=" randamNumber =Math.random() *3 ;
+  
+ if(randamNumber>0 && randamNumber<=1){
+   computerchose='bat';
+ }
+ else if(randamNumber>1 &&randamNumber<=2){
+   computerchose='bol';
+ }
+ else {
+  computerchose='stump';
+ }
+
+  computerChoseMsg=` ${computerchose}`;
+ 
+
+
+ if(computerchose=== 'bat'){
+    resultMsg='computer win';
+
+ }
+ else if(computerchose==='bol'){
+    resultMsg=' its a tie';
+ }
+ else{
+  resultMsg=`you was win`;
+ }
+
+ alert(`you have chose bol And computer chose is ${computerChoseMsg} nd ${resultMsg}`);">bol</button>
+  <button
+  onclick=" randamNumber =Math.random() *3 ;
+  
+ if(randamNumber>0 && randamNumber<=1){
+   computerchose='bat';
+ }
+ else if(randamNumber>1 &&randamNumber<=2){
+   computerchose='bol';
+ }
+ else {
+  computerchose='stump';
+ }
+
+  computerChoseMsg=` ${computerchose}`;
+ if(computerchose=== 'bat'){
+    resultMsg='you was win ';
+
+ }
+ else if(computerchose==='bol'){
+    resultMsg='computer win ';
+ }
+ else{
+  resultMsg=`its a tie`;
+ }
+
+ alert(`you have chose stump And computer chose is ${computerChoseMsg} And ${resultMsg}`);">stump</button>
+</body>
+</html>

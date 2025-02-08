@@ -1,0 +1,22 @@
+.calculater_contener{
+  border: solid 1px rgb(73, 73, 72);
+  width: 200px;
+  border-radius: 5px;
+  margin: 0 40% 0 35% ;
+
+}
+#display{
+  margin: 10px;
+  width: 85%;
+  font-size: 25px;
+}
+.button_Contener{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap ;
+}
+.cal_but{
+  width: 45px;
+  height: 45px;
+  margin: 3px;
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>cricket</title>
+  <style>
+    body{
+      text-align: center;
+    }
+    .choice-buttion{
+      height: 100px;
+      width: 100px;
+      margin: 10px;
+      cursor: pointer;
+      border-radius: 50px;
+    }
+    .choice-image{
+      height: 75px;
+      width: 75px;
+      border-radius: 50px;
+      
+      
+    }
+    
+  </style>
+</head>
+<body>
+  <h1 >bat bol stum game</h1>
+  <!-- button bat -->
+  <button id="bat" class="choice-buttion"
+   onclick=" 
+  let computer= genratingComputerChoose();
+ 
+ let resultMsg=getResult('bat',computer);
+ showResult('bat',computer,resultMsg);
+
+  ">   <img src="photo/Bat.png" alt="Bat image" class="choice-image"></button>
+
+  <!-- button of bol -->
+  <button  id="bol"  class="choice-buttion"
+  onclick="
+    computer =genratingComputerChoose()
+    resultMsg=getResult('bol',computer);
+    showResult('bol',computer,resultMsg);
+    
+    "><img src="photo/ball.png" alt="Bat image" class="choice-image"></button>
+ 
+ <!-- button stump -->
+ <button   id="stum"  class="choice-buttion"
+  onclick=" 
+   computer= genratingComputerChoose()
+   resultMsg= getResult('stump',computer);
+   showResult('stum',computer,resultMsg);
+  
+    "><img src="photo/stamp.png" alt="Bat image" class="choice-image"></button>
+
+
+
+ <h1 id="usermove"></h1>
+ <h1 id="computermove"></h1>
+ <h1 id="result"></h1>
+ <h1 id="score"></h1>
+ 
+ <!-- button reset -->
+<button onclick="localStorage.clear(score)
+ResetScore();">Reset</button>
+
+ <!-- script start -->
+ <script>
+  let scoreStr=localStorage.getItem('score');
+  let score;
+  ResetScore(scoreStr);
+
+  // Reset score function  
+  function ResetScore(scoreStr){
+     score=scoreStr? JSON.parse(scoreStr): {
+    win:0,
+    lose:0,
+    tie:0,
+    
+    
+  };
+
+  score.displayScore= function(){
+       return `win:${score.win}  Lose:${score.lose}  tie:${score.tie}`
+    };
+   showResult();
+  }
+  
+
+ 
+  // genrating computer message
+ 
+ function genratingComputerChoose(){
+  
+       let randamNumber =Math.random() *3 ;
+
+      if(randamNumber>0 && randamNumber<=1){
+          return 'bat';
+      }
+      else if(randamNumber>1 &&randamNumber<=2){
+          return 'bol';
+      }
+      else {
+          return 'stump';
+      }
+  }
+  // genrating result message
+
+  function getResult(userChose,computer){
+      if(userChose==='bat'){
+      
+              if(computer=== 'bat'){
+                score.tie++;
+                  return'its a Tie';
+
+              }
+              else if(computer==='bol'){
+                score.win++;
+                  return'user Win';
+              }
+              else{
+                score.lose++;
+                return`computer Win`;
+              }
+      }else if(userChose==='bol'){
+              if(computer=== 'bat'){
+                  score.lose++;
+                  return'computeer Win';
+
+              }
+              else if(computer==='bol'){
+                  score.tie++;
+                  return'its a Tie';
+              }
+              else{
+                score.win++;
+                return`user Win `;
+              } 
+        }else{
+          if(computer=== 'bat'){
+                  score.win++;
+                 return'user Win';
+
+              }
+              else if(computer==='bol'){
+                score.lose++;
+                  return'computer Win';
+              }
+              else{
+                score.tie++;
+                return`it's a  Tie `;
+              }
+
+
+        }
+    }
+
+
+    // showResulting score
+    function showResult(userChose,computer,resultMsg){
+      localStorage.setItem('score',JSON.stringify(score));
+
+      document.querySelector('#usermove').innerText=userChose!==undefined?`User Chose is ${userChose}`:''
+      document.querySelector('#computermove').innerText=computer!==undefined?`Computer Chose is ${computer}`:''
+      document.querySelector('#result').innerText=resultMsg?`Result is ${resultMsg}`:''
+      document.querySelector('#score').innerText=`Score ${score.displayScore()}`
+
+
+    }
+ </script>
+</body>
+</html>

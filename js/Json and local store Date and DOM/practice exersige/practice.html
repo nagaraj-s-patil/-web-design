@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>practice </title>
+  <style>
+    #my_button{
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 5px;
+}
+    .js_odd{
+      background-color: red;
+    }
+    .js_even{
+      background-color: green;
+    }
+  </style>
+  
+</head>
+<body>
+  <h1 id="timeing"></h1>
+
+  <button id="my_button" onclick="buttonpress()"></button>
+
+  <script>
+    let noOfTimeClick=localStorage.getItem('noOfTimeClick')||0;
+
+    function buttonpress(){
+      noOfTimeClick++;
+      localStorage.setItem('noOfTimeClick',noOfTimeClick);
+      update();
+      
+    }
+
+
+    function update(){
+      button=document.querySelector('#my_button');
+      button.innerText=noOfTimeClick;
+
+      if(noOfTimeClick%2===0){
+        button.classList.remove('js_odd');
+        button.classList.add('js_even');
+      }
+      else{
+        button.classList.remove('js_even');
+        button.classList.add('js_odd');
+      }
+    }
+    update();
+
+
+
+    let date=new Date();
+    let curenttime=date.getHours();
+    let name='nagaraj';
+    let heding=document.querySelector('#timeing');
+    disply(6,heding,name);
+
+
+    function disply(time,heding,name){
+
+      if(time>5 && time<12){
+        
+        heding.innerText=`good morning ${name}`;
+      }
+      else if(time>=12 && time<=18){
+       
+        heding.innerText=`good afternoon ${name}`;
+      }
+      else{
+        console.log('good night');
+        heding.innerText=`good night ${name}`;
+      }
+    }
+
+  
+  </script>
+</body>
+</html>
