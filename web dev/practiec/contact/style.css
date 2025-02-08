@@ -1,0 +1,11 @@
+ 
+.contener{
+  display: flex;
+  flex-direction: row;
+  
+}
+img{
+  width: 30px;
+  border: 2px;
+  border-radius: 5px;
+}

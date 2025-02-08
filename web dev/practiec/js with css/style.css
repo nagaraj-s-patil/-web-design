@@ -1,0 +1,88 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(190deg, rgb(235, 171, 111), rgb(161, 234, 149));
+}
+form{
+  /* border: 2px solid red; */
+  border-radius: 20px;
+  height: 600px;
+  width: 400px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 20px;
+background-color: rgb(238, 228, 188);
+padding: 20px;
+
+}
+
+input{
+  height: 50px;
+  width: 300px;
+  padding-left: 10px;
+}
+
+
+#show_pwd{
+  border: none;
+  height: 50px;
+  width: 300px;
+  background-color: blue;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+#submit_btn{
+  border: none;
+  height: 50px;
+  width: 300px;
+  background-color: green;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+#reset_btn{
+  border: none;
+  height: 50px;
+  width: 300px;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+#emoji{
+  font-size: 100px;
+}
+
+#username.warning{
+  border: 2px solid red;
+  outline: none;
+}
+#username.success{
+  border: 2px solid  green;
+  outline: none;
+}
+
+#password.warning{
+  border: 2px solid red;
+  outline: none;
+}
+#password.success{
+  border: 2px solid  green;
+  outline: none;
+}

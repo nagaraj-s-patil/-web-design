@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Objects in Arrays</title>
+</head>
+<body>
+    <h1>JavaScript Objects in Arrays</h1>
+
+    <form id="dataForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        
+        <label for="age">Age:</label>
+        <input type="number" id="age" required>
+        
+        <button type="submit">Add Data</button>
+    </form>
+
+    <h2>Data:</h2>
+    <ul id="dataList"></ul>
+
+    <script>
+        // Initialize an array to store objects
+        let dataArray = [];
+
+        // Function to add data to the array
+        function addData(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get values from the form
+            const name = document.getElementById("name").value;
+            const age = document.getElementById("age").value;
+
+            // Create an object and add it to the array
+            const newData = { name: name, age: age };
+            dataArray.push(newData);
+
+            // Display the updated data list
+            displayData();
+
+            // Reset the form
+            document.getElementById("dataForm").reset();
+        }
+
+        // Function to display data in the list
+        function displayData() {
+            const dataList = document.getElementById("dataList");
+            dataList.innerHTML = ""; // Clear previous data
+
+            // Loop through the array and create list items
+            dataArray.forEach(item => {
+                const listItem = document.createElement("li");
+                listItem.textContent = `Name: ${item.name}, Age: ${item.age}`;
+                dataList.appendChild(listItem);
+            });
+        }
+
+        // Add an event listener to the form
+        document.getElementById("dataForm").addEventListener("submit", addData);
+    </script>
+</body>
+</html>

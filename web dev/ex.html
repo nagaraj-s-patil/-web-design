@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Calculator</title>
+</head>
+<body>
+<script type="text/javascript">
+operation=-1;
+while (operation != 0)
+{
+var operation=prompt("Which operation do you wish to do?\n0: End Program\n1: Addition\n2: Subtraction\n3: Multiplication\n4: Division\n","");
+//addition, subtraction, multiplication, or division
+if (operation>0 && operation<=4)
+{
+var num1=parseInt(prompt("Enter the first number.",""));
+var num2=parseInt(prompt("Enter the second number.",""));
+if (operation==1) alert("The sum is "+(num1+num2));
+if (operation==2) alert("The difference is "+(num1-num2));
+if (operation==3) alert("The product is "+(num1*num2));
+if (operation==4) alert("The quotient is "+(num1/num2));
+}
+else
+{
+if (operation!=0) alert("That wasn't one of the options");
+}
+}
+</script>
+</body>
+</html>
