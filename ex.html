@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video with Custom Timing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #video-container {
+            position: relative;
+            width: 560px;
+            height: 315px;
+            margin: 50px auto;
+            text-align: center;
+            overflow: hidden; /* Ensures the play button doesn't show outside the container */
+        }
+        #player {
+            width: 100%;
+            height: 100%;
+        }
+        #play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            display: none; /* Initially hidden */
+            z-index: 1; /* Ensure it's above the iframe */
+        }
+        /* Style to hide YouTube's default play button */
+        .ytp-large-play-button {
+            display: none !important; /* Hide the default play button */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Play YouTube Video from 25m to 35m</h1>
+
+    <div id="video-container">
+        <div id="player"></div>
+        <button id="play-button" onclick="playVideo()">Play Video from 25m to 35m</button>
+    </div>
+
+    <script>
+        // Initialize the YouTube player variable
+        let player;
+
+        // Load the IFrame API
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '315',
+                width: '560',
+                videoId: 'X98-TJRMZRk',
+                playerVars: {
+                    'start': 1500, // Start at 25 minutes
+                    'end': 2100,   // End at 35 minutes
+                    'controls': 1, // Show controls
+                    'autoplay': 0, // Autoplay set to 0 initially
+                    'showinfo': 0, // Hide video info (deprecated)
+                    'modestbranding': 1, // Minimal branding
+                    'rel': 0 // Prevent showing related videos at the end
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        // When the player is ready, bind the play function
+        function onPlayerReady(event) {
+            // Show the custom play button when ready
+            document.getElementById("play-button").style.display = "block";
+        }
+
+        // Function to play the video
+        function playVideo() {
+            player.seekTo(1500); // Seek to 25 minutes
+            player.playVideo(); // Play the video
+            document.getElementById("play-button").style.display = "none"; // Hide custom button after play
+        }
+
+        // When the video state changes, check if it should stop
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.PLAYING) {
+                const endTime = 2100; // 35 minutes in seconds
+                // Check every second if the video has reached the end time
+                const interval = setInterval(() => {
+                    const currentTime = player.getCurrentTime();
+                    if (currentTime >= endTime) {
+                        player.stopVideo(); // Stop the video
+                        clearInterval(interval); // Clear the interval
+                        document.getElementById("play-button").style.display = "block"; // Show button again
+                    }
+                }, 1000); // Check every second
+            }
+        }
+    </script>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>
